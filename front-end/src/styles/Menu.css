@@ -1,0 +1,120 @@
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.menu_container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.menu {
+  position: relative;
+  border-radius: 30px;
+  background-color: rgb(237, 236, 236);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.showMoreMenu{
+  position: absolute;
+  color: black;
+  left: 95%;
+  cursor: pointer;
+  background-color: white;
+  padding: 5px;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+  border-radius: 100%;
+}
+
+.showMoreMenu:hover{
+  background-color: rgb(219, 219, 219);
+}
+
+.username {
+  width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.links , .ExpandedLinks {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.links li , .ExpandedLinks li {
+  position: relative;
+  margin: 0.5rem 0;
+  display: flex;
+  gap: 20px;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.links li>div , .ExpandedLinks li{
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+
+.links li>div.active , .links li>div:hover {
+  background-color: rgb(39, 39, 39);
+  color: white;
+  border-radius: 100%;
+}
+
+.ExpandedLinks li:has(.active) , .ExpandedLinks li:hover {
+  background-color: rgb(54, 54, 54);
+  color: white;
+  border-radius: 30px;
+}
+
+@media screen and (max-width : 1000px) {
+  .menu_container{
+    justify-content: center;
+    padding-top: 10px;
+  }
+  .menu {
+    justify-content: center;
+    padding: 0px 7px;
+  }
+  .showMoreMenu {
+    display: none !important;
+  }
+  .menu ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+}

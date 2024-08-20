@@ -1,0 +1,239 @@
+/* App.js */
+.App {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
+  scrollbar-width: thin;
+}
+
+div {
+  scrollbar-width: thin;
+}
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Category.js */
+
+.catColor {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  outline: 2px solid rgb(131, 131, 131);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+#categStyle {
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 1px 1px 2px rgba(120, 119, 119, 0.598);
+  transition: 0.3s;
+}
+
+#categStyle:hover {
+  background-color: rgba(243, 243, 243, 0.761);
+}
+
+#categStyle textarea:focus {
+  outline: none;
+}
+
+/* Tasks.js */
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.AddTaskIcon {
+  bottom: 10%;
+  right: 7%;
+  z-index: 1 !important;
+}
+
+.taskContent {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.no-content {
+  font-weight: bold;
+  color: black;
+  margin-top: 10px;
+}
+
+/* stats.js */
+
+.CircularProgressbarContainer {
+  width: 160px;
+}
+
+/* clerk */
+.cl-internal-1j7ahlv {
+  width: 30px;
+  height: 30px;
+}
+
+/* loading logo */
+
+.loader {
+  height: 4px;
+  width: 130px;
+  --c: no-repeat linear-gradient(#6100ee 0 0);
+  background: var(--c), var(--c), #d7b8fc;
+  background-size: 60% 100%;
+  animation: l16 3s infinite;
+}
+
+@keyframes l16 {
+  0% {
+    background-position: -150% 0, -150% 0;
+  }
+
+  66% {
+    background-position: 250% 0, -150% 0;
+  }
+
+  100% {
+    background-position: 250% 0, 250% 0;
+  }
+}
+
+.loader1 {
+  width: 120px;
+  height: 20px;
+  border-radius: 5px;
+  background: linear-gradient(90deg,
+      rgba(88, 88, 88, 0.067) 33%,
+      rgba(106, 106, 106, 0.333) 50%,
+      #0001 66%) #f2f2f2;
+  background-size: 300% 100%;
+  animation: l1 1s infinite linear;
+}
+
+@keyframes l1 {
+  0% {
+    background-position: right;
+  }
+}
+
+/* AI chat */
+/* 
+.bHKkOt , .btXeAS , .gQlifK {
+  left: 24px;
+} */
+
+@media screen and (max-width : 1000px) {
+  .home {
+    flex-direction: column;
+  }
+
+  .home>div:nth-child(2) {
+    width: 100% !important;
+    padding: 10px !important;
+    overflow-y: visible !important;
+    height: 100dvh !important;
+  }
+
+  .taskCont {
+    position: relative;
+  }
+
+  .taskDate {
+    position: absolute;
+    font-size: 10px !important;
+    left: 50%;
+  }
+
+  .filterCont.gap-5 {
+    flex-wrap: wrap;
+    row-gap: 1rem !important;
+  }
+
+  .filterCont svg:has(line) {
+    display: none;
+  }
+}
+
+@media screen and (max-width : 700px) {
+  .addForm {
+    width: 80% !important;
+    z-index: 2000;
+    position: relative;
+  }
+
+  .AddTaskIcon {
+    top: 40%;
+    right: 10%;
+  }
+
+  .notes {
+    overflow-y: scroll;
+    height: 50dvh;
+  }
+
+  .notes>div {
+    width: 100%;
+  }
+
+  .note {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .NoteDetails.w-50 {
+    width: 90% !important;
+  }
+
+  .statsCont.d-flex>div,
+  .supportCont.d-flex {
+    display: block !important;
+  }
+
+  .statsCont.d-flex>div>div {
+    width: 100% !important;
+  }
+
+  .CircularProgressbarContainerCont.justify-content-between {
+    justify-content: center !important;
+    margin-top: 10px !important;
+  }
+
+  .pieChartCont>div.d-flex {
+    flex-direction: column !important;
+  }
+  
+  .pieChartCont>div.d-flex>div.w-50 {
+    width: 100% !important;
+    margin-top: 10px !important;
+  }
+}
